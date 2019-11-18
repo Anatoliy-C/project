@@ -91,6 +91,8 @@
 //     i = arr.join(', ');
 // console.log(i);
 
+// Объектно ориентированное програмирывание (ОПП) 16
+
 let arr = ['1', '15', '8', '4'],
     i = arr.sort(compareNum);
 
@@ -99,3 +101,17 @@ function compareNum(a,b) {
 }
 
 console.log(arr);
+
+let soldier = {
+    height: 400,
+    armor: 100
+};
+
+let john = {
+    height: 100
+};
+
+john.__proto__ = soldier;
+
+console.log(john);
+console.log(john.armor);
