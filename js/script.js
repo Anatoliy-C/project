@@ -93,25 +93,73 @@
 
 // Объектно ориентированное програмирывание (ОПП) 16
 
-let arr = ['1', '15', '8', '4'],
-    i = arr.sort(compareNum);
+// let arr = ['1', '15', '8', '4'],
+//     i = arr.sort(compareNum);
 
-function compareNum(a,b) {
-    return a-b;
+// function compareNum(a,b) {
+//     return a-b;
+// }
+
+// console.log(arr);
+
+// let soldier = {
+//     height: 400,
+//     armor: 100
+// };
+
+// let john = {
+//     height: 100
+// };
+
+// john.__proto__ = soldier;
+
+// console.log(john);
+// console.log(john.armor);
+
+
+
+// Динамическая типизация в JS
+
+// Простые типы
+
+// 3 4 6 // Числа
+// 'string', "string", `string`; // Строка
+// true/false // Логический тип (boolean)
+
+// - toString
+
+// 1)
+console.log(typeof(String(null)));
+// 2)
+console.log(typeof("q" + 5));
+console.log('https://vk.com/catalog/' +5);
+
+// to number
+
+//1)
+console.log(typeof(Number('5')));
+//2)
+console.log(typeof(5 + +'5'));
+//3)
+console.log(typeof(parseInt('15px', 10)));
+
+let ans = +proq('hello', '');
+
+// 0, '', null, undefined, NaN - folse
+
+let switcher = null;
+
+if (switcher) {
+    console.log("Worcing..");
 }
 
-console.log(arr);
+switcher = 1;
 
-let soldier = {
-    height: 400,
-    armor: 100
-};
+if (switcher) {
+    console.log("Worcing..");
+}
 
-let john = {
-    height: 100
-};
-
-john.__proto__ = soldier;
-
-console.log(john);
-console.log(john.armor);
+// 2)
+console.log(Boolean(Number('5')));
+// 3)
+console.log(typeof(!!'5'));
