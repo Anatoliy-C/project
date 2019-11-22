@@ -129,37 +129,91 @@
 // - toString
 
 // 1)
-console.log(typeof(String(null)));
-// 2)
-console.log(typeof("q" + 5));
-console.log('https://vk.com/catalog/' +5);
+// console.log(typeof(String(null)));
+// // 2)
+// console.log(typeof("q" + 5));
+// console.log('https://vk.com/catalog/' +5);
 
-// to number
+// // to number
 
-//1)
-console.log(typeof(Number('5')));
-//2)
-console.log(typeof(5 + +'5'));
-//3)
-console.log(typeof(parseInt('15px', 10)));
+// //1)
+// console.log(typeof(Number('5')));
+// //2)
+// console.log(typeof(5 + +'5'));
+// //3)
+// console.log(typeof(parseInt('15px', 10)));
 
-let ans = +proq('hello', '');
+// let ans = +proq('hello', '');
 
-// 0, '', null, undefined, NaN - folse
+// // 0, '', null, undefined, NaN - folse
 
-let switcher = null;
+// let switcher = null;
 
-if (switcher) {
-    console.log("Worcing..");
-}
+// if (switcher) {
+//     console.log("Worcing..");
+// }
 
-switcher = 1;
+// switcher = 1;
 
-if (switcher) {
-    console.log("Worcing..");
-}
+// if (switcher) {
+//     console.log("Worcing..");
+// }
 
-// 2)
-console.log(Boolean(Number('5')));
-// 3)
-console.log(typeof(!!'5'));
+// // 2)
+// console.log(Boolean(Number('5')));
+// // 3)
+// console.log(typeof(!!'5'));
+
+
+// 19) Получение элементов со страницы
+
+let box = document.getElementById('box'),
+    btn = document.getElementsByTagName('button'),
+    circle = document.getElementsByClassName('circle'),
+    heart = document.querySelectorAll('.heart'),
+    oneHeart = document.querySelector('.heart'),
+    wrapper = document.querySelector('.wrapper');
+
+// console.log(box);
+// console.log(btn);
+// console.log(btn[2]);
+// console.log(circle[0]);
+// console.log(heart);
+// console.log(oneHeart);
+
+
+// 20) Действие с элементами на странице
+
+box.style.backgroundColor = 'blue';
+btn[1].style.borderRadius = '10%';
+circle[0].style.backgroundColor = 'red';
+circle[1].style.backgroundColor = 'yellow';
+circle[2].style.backgroundColor = 'green';
+
+// for (let i = 0; i < heart.length; i++) {
+//     heart[i].style.backgroundColor = 'tomato';
+// }
+
+// heart.forEach(function(item, i, hearts){
+//     item.style.backgroundColor = 'yellow';
+// });
+
+let div = document.createElement('div'),
+    text = document.createTextNode('Тут был я');
+
+div.classList.add('black');
+
+// document.body.appendChild(div);
+// wrapper.appendChild(div);
+
+
+// div.innerHTML = "<h4>Kitti Kitti</h4>";
+div.textContent = "Kitti Kitti";
+
+document.body.insertBefore(div, circle[1]);
+document.body.removeChild(circle[2]);
+wrapper.removeChild(heart[1]);
+
+document.body.replaceChild(btn[1], circle[1]);
+
+console.log(div);
